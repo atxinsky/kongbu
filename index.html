@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐怖片单 | Horror Collection</title>
+  <meta name="description" content="恐怖/血腥/Cult电影片单收藏，按年份和分类展示">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain-overlay"></div>
+
+  <header class="site-header">
+    <div class="header-content">
+      <h1 class="site-title">
+        <span class="title-icon">&#x1F9E0;</span>
+        <span class="title-text">HORROR<br><span class="title-sub">COLLECTION</span></span>
+      </h1>
+      <p class="site-desc">恐怖 / 血腥 / Cult 电影片单收藏</p>
+      <p class="site-credit">片单来源：<a href="https://space.bilibili.com/2301555" target="_blank" rel="noopener">朝生暮死乐队-Tiina</a></p>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="categoryNav">
+    <div class="nav-inner">
+      <button class="nav-btn active" data-category="all">全部</button>
+      <button class="nav-btn" data-category="body-horror">肉体恐怖</button>
+      <button class="nav-btn" data-category="cthulhu">克苏鲁</button>
+      <button class="nav-btn" data-category="rob-zombie">Rob Zombie</button>
+      <button class="nav-btn" data-category="tim-burton">Tim Burton</button>
+      <button class="nav-btn" data-category="john-carpenter">John Carpenter</button>
+      <button class="nav-btn" data-category="stephen-king">斯蒂芬金</button>
+      <button class="nav-btn" data-category="del-toro">德尔托罗</button>
+    </div>
+  </nav>
+
+  <main class="main-content" id="mainContent">
+    <div class="timeline" id="timeline"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data sourced from <a href="https://space.bilibili.com/2301555" target="_blank" rel="noopener">B站 朝生暮死乐队-Tiina</a></p>
+    <p class="footer-sub">Horror Collection &copy; 2025</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
