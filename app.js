@@ -52,22 +52,29 @@ function renderMovieCard(movie) {
   const titleEn = movie.title_en ? `<div class="movie-title-en">${movie.title_en}</div>` : ''
   const country = movie.country ? `<span class="meta-tag country">${movie.country}</span>` : ''
   const category = movie.category ? `<span class="meta-tag category">${getCategoryLabel(movie.category)}</span>` : ''
+  const rating = movie.rating ? `<span class="meta-tag rating">★ ${movie.rating}</span>` : ''
   const desc = movie.desc ? `<div class="card-desc">${movie.desc}</div>` : ''
   const year = movie.year ? movie.year : '—'
   let links = ''
   if (movie.douban) {
     links = `<div class="card-links"><a class="card-link" href="${movie.douban}" target="_blank" rel="noopener">豆瓣 ↗</a></div>`
   }
+  const poster = movie.poster
+    ? `<img src="${movie.poster}" alt="${movie.title_cn}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=poster-placeholder>🎬</div>'">`
+    : '<div class="poster-placeholder">🎬</div>'
   return `
     <div class="movie-card">
-      <div class="card-top">
-        <span class="card-year">${year}</span>
-        <span class="movie-title-cn">${movie.title_cn}</span>
+      <div class="card-poster">${poster}</div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="card-year">${year}</span>
+          <span class="movie-title-cn">${movie.title_cn}</span>
+        </div>
+        ${titleEn}
+        <div class="card-meta">${rating}${country}${category}</div>
+        ${desc}
+        ${links}
       </div>
-      ${titleEn}
-      <div class="card-meta">${country}${category}</div>
-      ${desc}
-      ${links}
     </div>`
 }
 
